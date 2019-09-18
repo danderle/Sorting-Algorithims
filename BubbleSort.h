@@ -5,6 +5,7 @@
 class BubbleSort
 {
 public:
+	//Default constructor
 	BubbleSort()
 	{
 		Initialize();
@@ -12,6 +13,7 @@ public:
 		getchar();
 	}
 
+	//Where the magic happens
 	void Sort(int arr[], const int arrSize)
 	{
 		bool sorted = false;
@@ -30,7 +32,7 @@ public:
 		}
 	}
 
-
+	//Prints an array
 	void Print(int arr[], const int arrSize) const
 	{
 		std::cout << "-";
@@ -42,6 +44,8 @@ public:
 	}
 
 private:
+	//Initializes a vector with increasing numbers, 
+	//then shuffels the vector and then copies it to the array to be sorted
 	void Initialize()
 	{
 		nums.resize(ArrLength);
@@ -52,6 +56,8 @@ private:
 		std::random_shuffle(nums.begin(), nums.end());
 		std::copy(nums.begin(), nums.end(), numArr);
 	}
+
+	//Prints the unsorted and sorted arrays
 	void Output()
 	{
 		std::cout << "NOT SORTED\n";
@@ -61,8 +67,11 @@ private:
 		Print(numArr, ArrLength);
 	}
 
+	//Defines the array length
 	static const int ArrLength = 50;
+	//Vector is only used to create the shuffeled array
 	std::vector<int> nums;
+	//the array to be sorted
 	int numArr[ArrLength];
 
 };
